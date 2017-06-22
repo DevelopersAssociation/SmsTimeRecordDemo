@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmsTimeRecordDemo</string>
+    <string name="accessibility_service_description">
+        to record the time when received a sms message and the data will be saved at \\SmsTimeRecord.\n
+        \n
+        Version:v1.1.0\n
+        Author: FruitBasket\n
+        Email: FruitBasket@qq.com\n
+        Source code: github.com/DevelopersAssociation</string>
+</resources>
