@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">SmsTimeRecordDemo</string>
     <string name="accessibility_service_description">
-        to record the time when received a sms message and the data will be saved at \\SmsTimeRecord.\n
+        to record the time when this service begin to run and the time when receive a sms. Time will be indicated by duration between the system boot time and now. The unit of time is  nanometre . The data will be saved at \\SmsTimeRecord.\n
         \n
-        Version:v1.1.0\n
+        Version: v1.0.0\n
         Author: FruitBasket\n
         Email: FruitBasket@qq.com\n
-        Source code: github.com/DevelopersAssociation</string>
+        Source code: github.com/DevelopersAssociation
+    </string>
 </resources>

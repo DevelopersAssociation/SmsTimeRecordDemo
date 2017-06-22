@@ -1,15 +1,12 @@
 package com.fruitbasket.smstimerecorddemo;
 
 import android.accessibilityservice.AccessibilityService;
-import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Environment;
-import android.os.IBinder;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
@@ -18,7 +15,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 
 /**
  * Author: FruitBasket
@@ -47,7 +43,7 @@ public class SmsTimeRecordService extends AccessibilityService {
         }
 
         //记录时间
-        record("boot");
+        recordName("boot");
 
         smsReceiver=new SmsReceiver();
         registerReceiver(
@@ -83,17 +79,18 @@ public class SmsTimeRecordService extends AccessibilityService {
         public void onReceive(Context context, Intent intent) {
             Log.i(TAG,"onReceive()");
             //记录时间
-            record("received");
+            recordName("received");
         }
     }
 
-    private void record(String tag){
+    private void recordName(String tag){
         Log.d(TAG, "current time: "+SystemClock.elapsedRealtimeNanos());
         try {
             DataOutputStream outputStream=new DataOutputStream(
                     new FileOutputStream(APP_FILE_DIR+File.separator+"log.txt",true)
             );
             outputStream.writeBytes(tag+":  "+SystemClock.elapsedRealtimeNanos()+'\n');
+            outputStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

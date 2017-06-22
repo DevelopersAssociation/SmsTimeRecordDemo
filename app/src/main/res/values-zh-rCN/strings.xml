@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">时间记录服务</string>
+    <string name="accessibility_service_description">
+        记录本服务的启动时刻和接收到短信的时刻，这个时间使用操作系统启动后到现在的时长表示，单位为纳秒。数据将会存放在\\SmsTimeRecord文件夹中。\n
+        \n
+        版本：v1.0.0\n
+        作者：水果篮\n
+        邮箱：FruitBasket@qq.com\n
+        源代码：github.com/DevelopersAssociation
+    </string>
+</resources>
